@@ -9,10 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleLogicLayer\LogicLayer.csproj" />
-    <ProjectReference Include="..\ConsolePresentationLayer\PresentationLayer.csproj" />
-    <ProjectReference Include="..\Templates\DataAccessLayer\DataAccessLayer.csproj" />
-    <ProjectReference Include="..\Templates\Domain\Domain.csproj" />
+    <ProjectReference Include="..\ConsoleLogicLayer\ConsoleLogicLayer.csproj" />
+    <ProjectReference Include="..\ConsolePresentationLayer\ConsolePresentationLayer.csproj" />
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>

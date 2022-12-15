@@ -12,8 +12,8 @@
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
-    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj" />
-    <ProjectReference Include="..\PresentationLayer\PresentationLayer.csproj" />
+    <ProjectReference Include="..\WpfLogicLayer\WpfLogicLayer.csproj" />
+    <ProjectReference Include="..\WpfPresentationLayer\WpfPresentationLayer.csproj" />
   </ItemGroup>
 
 </Project>

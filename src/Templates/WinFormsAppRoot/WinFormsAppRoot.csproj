@@ -3,17 +3,17 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <RootNamespace>Templates.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Templates.$(MSBuildProjectName.Replace(" ", "_"))</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
-    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj" />
-    <ProjectReference Include="..\PresentationLayer\PresentationLayer.csproj" />
+    <ProjectReference Include="..\WinFormsLogicLayer\WinFormsLogicLayer.csproj" />
+    <ProjectReference Include="..\WinFormsPresentationLayer\WinFormsPresentationLayer.csproj" />
   </ItemGroup>
 
 </Project>
