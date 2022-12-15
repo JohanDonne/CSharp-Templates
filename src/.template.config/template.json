@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Johan Donné",
+  "classifications": [ "3Layer" ],
+  "name": "3LayerSolution",
+  "identity": "3LayerSolutionId",
+  "description": "Solution Template for a solution using the 3layer architecture",
+  "shortName": "3Layers", 
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Templates", 
+  "preferNameDirectory": "true",
+  "symbols":{
+    "author": {
+      "type": "parameter",
+      "defaultValue": "Author",
+      "replaces":"SolutionAuthor"
+    }
+  }
+}
