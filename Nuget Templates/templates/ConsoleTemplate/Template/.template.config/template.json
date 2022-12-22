@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Johan Donne",
+  "classifications": [ "3Layer", "Console", "JD" ],
+  "name": "Console 3Layer JD",
+  "identity": "JohanDonne.Console3Layer",
+  "description": "Solution Template for a Console App using 3 layer architecture",
+  "shortName": "Console3L-JD", 
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Template", 
+  "preferNameDirectory": "true",
+  "symbols":{
+    "author": {
+      "type": "parameter",
+      "defaultValue": "Author",
+      "replaces":"SolutionAuthor"
+    },
+    "SolutionType":{
+      "type":"parameter",
+      "datatype": "choice",
+      "defaultValue":"Class Libraries",
+      "choices": [
+        {
+          "choice": "Class Libraries",
+          "description": "Console app using Class Libraries"
+        },        
+        {
+          "choice":"Project Folders",
+          "description":"Console app using Solution Folders"
+        }
+      ]
+    },
+    "CreationTimeStamp":{
+       "type": "generated",
+       "generator": "now",
+       "parameters": {
+          "format": "g"
+       },
+       "replaces":"01/01/1901"
+    }
+  },
+  "sources": [
+    {
+      "include": [ "Template.sln" ],
+      "modifiers": [
+        {
+          "condition": "(SolutionType == 'Class Libraries')",
+          "include": [
+            "Domain/**",
+            "DataAccessLayer/**",
+            "ConsoleLogicLayer/**",
+            "ConsolePresentationLayer/**",
+            "ConsoleAppRoot/**"
+          ]
+        },
+        {
+          "condition": "(SolutionType == 'Project Folders')",
+          "include": [
+            "ConsoleApp/**"
+          ]
+        }
+      ]
+    }
+  ],
+   "guids": [
+    "96A70948-6B0C-4F77-9572-7E3BEFEEAD1E",
+    "5750E0B8-BF94-4A45-A77A-4EE9BD3C0B3F",
+    "D713B2A3-4AF6-4B5E-83F9-152A776D8166",
+    "C78E86CF-B6E0-4F4F-AC6F-22F44CC67117",
+    "8B11F4A2-4E9D-427D-99C3-72AAE0B579B1",
+    "31101900-C5CD-4B55-BDD5-D89BEC780E52",
+    "D6B3DF57-6C19-48FA-AD27-278BDF0ACFB3"
+  ]
+}
