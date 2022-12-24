@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Johan Donne",
+  "classifications": [ "3Layer", "WPF", "JD" ],
+  "name": "WPF 3Layer JD",
+  "identity": "JohanDonne.Wpf3Layer",
+  "description": "Solution Template for a WPF App using 3 layer architecture",
+  "shortName": "WPF3L-JD", 
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Template", 
+  "preferNameDirectory": true,
+  "symbols":{
+    "author": {
+      "type": "parameter",
+      "defaultValue": "Author",
+      "replaces":"SolutionAuthor"
+    },
+    "Architecture":{
+      "type":"parameter",
+      "datatype": "choice",
+      "defaultValue":"Class Libraries",
+      "choices": [
+        {
+          "choice": "Class Libraries",
+          "description": "WPF app using Class Libraries"
+        },        
+        {
+          "choice":"Project Folders",
+          "description":"WPF app using Solution Folders"
+        },
+        {
+          "choice":"MVVM DI",
+          "displayname":"Class Libraries using MVVM & DI",
+          "description":"WPF app using MVVM & DI"          
+        }
+      ]
+    },
+    "CreationTimeStamp":{
+       "type": "generated",
+       "generator": "now",
+       "parameters": {
+          "format": "g"
+       },
+       "replaces":"01/01/1901"
+    },
+    "AppRootX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"AppRoot"
+       },
+       "replaces":"AppRoot2"
+    },
+    "DomainX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"Domain"
+       },
+       "replaces":"Domain2"
+    },
+    "DataAccessLayerX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"DataAccessLayer"
+       },
+       "replaces":"DataAccessLayer2"
+    },
+    "LogicLayerX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"LogicLayer"
+       },
+       "replaces":"LogicLayer2"
+    },
+    "PresentationLayerX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"PresentationLayer"
+       },
+       "replaces":"PresentationLayer2"
+    }
+  },
+  "sources": [
+    {
+      "include": [ "Template.sln" ],
+      "modifiers": [
+        {
+          "condition": "(Architecture == 'Class Libraries')",
+          "include": [
+            "Domain/**",
+            "DataAccessLayer/**",
+            "LogicLayer/**",
+            "PresentationLayer/**",
+            "AppRoot/**"
+          ]
+        },
+        {
+          "condition": "(Architecture == 'Project Folders')",
+          "include": [
+            "WpfApp/**"
+          ]
+        },
+        {
+          "condition": "(Architecture == 'MVVM DI')",
+          "include": [
+            "Domain2/**",
+            "DataAccessLayer2/**",
+            "LogicLayer2/**",
+            "PresentationLayer2/**",
+            "AppRoot2/**"
+          ]
+        }
+      ]
+    }
+  ],
+   "guids": [
+    "96A70948-6B0C-4F77-9572-7E3BEFEEAD1E",
+    "448C068B-D63E-47B2-B1F0-7CB1F75DC399",
+    "621102F8-633E-4D3D-AECA-984EE728E5F2",
+    "47CCE30C-9C3F-41EB-9428-F92A36875296",
+    "D9FFD6A4-B3DB-4A57-ACEA-17CB47A2F3DF",
+    "E9C098BC-9BFD-4B6C-87D4-AF9602540D60",
+    "42C9D083-EA84-4F4E-9847-EDC460A47E6E",
+    "6E69B647-58D4-41C0-9440-26F66E179BB4",
+    "11550330-ACC0-4C7F-98C8-B2693168E3A0",
+    "06930B6D-9395-49FC-AE2D-DD866807EB64",
+    "FCD61687-812E-47F6-A574-4ADD768CD064",
+    "2888F0AF-B174-4F4E-8015-6E981673DE9F"
+  ]
+}
