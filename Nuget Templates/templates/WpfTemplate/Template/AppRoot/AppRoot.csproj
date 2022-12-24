@@ -8,6 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>Template.$(MSBuildProjectName.Replace(" ", "_"))</AssemblyName>
     <StartupObject>Template.AppRoot.App</StartupObject>
+    <RootNamespace>Template.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
