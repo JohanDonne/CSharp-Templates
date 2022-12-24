@@ -16,10 +16,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\DataAccessLayer2\DataAccessLayer2.csproj" />
-	  <ProjectReference Include="..\Domain2\Domain2.csproj" />
-	  <ProjectReference Include="..\LogicLayer2\LogicLayer2.csproj" />
-	  <ProjectReference Include="..\PresentationLayer2\PresentationLayer2.csproj" />
+	  <ProjectReference Include="..\DataAccessLayer2\DataAccessLayer.csproj" />
+	  <ProjectReference Include="..\Domain2\Domain.csproj" />
+	  <ProjectReference Include="..\LogicLayer2\LogicLayer.csproj" />
+	  <ProjectReference Include="..\PresentationLayer2\PresentationLayer.csproj" />
 	</ItemGroup>
 
 </Project>

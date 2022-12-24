@@ -45,6 +45,51 @@
           "format": "g"
        },
        "replaces":"01/01/1901"
+    },
+    "AppRootX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"AppRoot"
+       },
+       "replaces":"AppRoot2",
+       "fileRename":"AppRoot2"
+    },
+    "DomainX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"Domain"
+       },
+       "replaces":"Domain2",
+       "fileRename":"Domain2"
+    },
+    "DataAccessLayerX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"DataAccessLayer"
+       },
+       "replaces":"DataAccessLayer2",
+       "fileRename":"DataAccessLayer2"
+    },
+    "LogicLayerX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"LogicLayer"
+       },
+       "replaces":"LogicLayer2",
+       "fileRename":"LogicLayer2"
+    },
+    "PresentationLayerX":{
+       "type": "generated",
+       "generator": "constant",
+       "parameters": {
+         "value":"PresentationLayer"
+       },
+       "replaces":"PresentationLayer2",
+       "fileRename":"PresentationLayer2"
     }
   },
   "sources": [
