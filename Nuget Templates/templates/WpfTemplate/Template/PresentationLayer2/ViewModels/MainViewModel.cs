@@ -1,20 +1,35 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.DirectoryServices.ActiveDirectory;
 using Template.Domain.Interfaces;
+using Template.Domain2.Entities;
 
 namespace Template.PresentationLayer.ViewModels;
 public partial class MainViewModel : ObservableObject
 {
     private readonly ILogic _logic;
+    private bool _awaitingForecast = false;
     
+    private bool AwaitingForecast
+    {
+        get => _awaitingForecast;
+        set
+        { 
+          _awaitingForecast = value;
+          UpdateForecastCommand.NotifyCanExecuteChanged();
+        }
+    }
+
     [ObservableProperty]
     private string _title;
     
     public string InfoText => $"Hello World from {_logic.Info.Name} by {_logic.Info.Author}";
 
-    public string Time => DateTime.Now.ToLongTimeString();
+    public WeatherForecast[]? Forecast { get; private set; }
 
-    public IRelayCommand UpdateCommand { get; init; }
+    public string Time => DateTime.Now.ToLongTimeString();
+        
+    public IAsyncRelayCommand UpdateForecastCommand { get; init; }
 
 #pragma warning disable CS8618 
     public MainViewModel()
@@ -29,11 +44,24 @@ public partial class MainViewModel : ObservableObject
     {
         _logic = logic;
         _title = "MainView";
-        UpdateCommand = new RelayCommand(UpdateTime);
+        UpdateForecastCommand = new AsyncRelayCommand(GetForecastAsync, () => !_awaitingForecast);
+        _ = TimeLoop();
     }
 
-    private void UpdateTime()
+    private async Task TimeLoop()
     {
-        OnPropertyChanged(nameof(Time));
+        var timer = new PeriodicTimer(TimeSpan.FromMilliseconds(100));
+        while (await timer.WaitForNextTickAsync())
+        {
+            OnPropertyChanged(nameof(Time));
+        }
+    }
+
+    private async Task GetForecastAsync()
+    {
+        AwaitingForecast = true;
+        Forecast = await _logic.GetForecastAsync();
+        OnPropertyChanged(nameof(Forecast));
+        AwaitingForecast = false;
     }
 }

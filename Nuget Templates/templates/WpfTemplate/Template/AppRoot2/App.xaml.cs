@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
 using System.Windows;
+using System.Windows.Markup;
 using Template.DataAccessLayer;
 using Template.Domain;
 using Template.Domain.Interfaces;
@@ -32,6 +34,9 @@ public partial class App : Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
+        // Change Language & culture for WPF FrameworkEelements form en-US to the local Windows Settings.
+        FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement),
+           new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
         base.OnStartup(e);
 
         var mainWindow = _serviceProvider.GetService<MainWindow>();

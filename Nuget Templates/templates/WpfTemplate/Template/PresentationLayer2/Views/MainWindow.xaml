@@ -8,7 +8,7 @@
         d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
         Title="{Binding Title}" d:Title="Designtime Title "
-        Height="450" Width="800"
+        Height="500" Width="800" ResizeMode="CanMinimize"
 >
     <DockPanel>
         <TextBlock DockPanel.Dock="Top"
@@ -16,13 +16,40 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Margin="10"  Padding="30,10"  Background="Silver" FontSize="14" />
+        <Button DockPanel.Dock="Bottom"
+                Content="Update Weather Forecast"
+                Command="{Binding UpdateForecastCommand}"
+                Width="160" Height="30" Margin="20,20" />
         <TextBlock DockPanel.Dock="Top" 
                    Text="{Binding Time}" d:Text="00:00:00" 
                    TextAlignment="Center" Background="CadetBlue" Foreground="White"
-                   FontSize="24" Margin="50" Width="300" Padding="10" />
-        <Button DockPanel.Dock="Top"
-                Content="Update Time"
-                Command="{Binding UpdateCommand}"
-                Width="100" Height="40" />
+                   FontSize="24" Margin="20" Width="200" Padding="5"/>
+        
+        <Border DockPanel.Dock ="Top"  Margin="0,20" Width="355" BorderThickness="2" BorderBrush="DarkBlue" CornerRadius="5" Padding="10">
+            <ListView  ItemsSource="{Binding Forecast}" BorderThickness="0" FontSize="14" >                
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Width="120" Header="Date">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Date}" Foreground="teal"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="75" Header="Temp (°C)">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding TemperatureC}" TextAlignment="Right" Width="40" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Summary}" Width="130" />
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+        </Border>
     </DockPanel>
 </Window>
