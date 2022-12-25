@@ -1,34 +1,33 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.DirectoryServices.ActiveDirectory;
+using JDTemplate.Domain.Entities;
 using JDTemplate.Domain.Interfaces;
-using JDTemplate.Domain2.Entities;
 
 namespace JDTemplate.PresentationLayer.ViewModels;
 public partial class MainViewModel : ObservableObject
 {
     private readonly ILogic _logic;
     private bool _awaitingForecast = false;
-    
+
     private bool AwaitingForecast
     {
         get => _awaitingForecast;
         set
-        { 
-          _awaitingForecast = value;
-          UpdateForecastCommand.NotifyCanExecuteChanged();
+        {
+            _awaitingForecast = value;
+            UpdateForecastCommand.NotifyCanExecuteChanged();
         }
     }
 
     [ObservableProperty]
     private string _title;
-    
+
     public string InfoText => $"Hello World from {_logic.Info.Name} by {_logic.Info.Author}";
 
     public WeatherForecast[]? Forecast { get; private set; }
 
     public string Time => DateTime.Now.ToLongTimeString();
-        
+
     public IAsyncRelayCommand UpdateForecastCommand { get; init; }
 
 #pragma warning disable CS8618 
@@ -45,6 +44,7 @@ public partial class MainViewModel : ObservableObject
         _logic = logic;
         _title = "MainView";
         UpdateForecastCommand = new AsyncRelayCommand(GetForecastAsync, () => !_awaitingForecast);
+        _ = GetForecastAsync();
         _ = TimeLoop();
     }
 

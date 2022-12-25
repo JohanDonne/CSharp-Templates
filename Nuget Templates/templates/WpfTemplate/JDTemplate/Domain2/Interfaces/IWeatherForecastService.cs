@@ -1,4 +1,4 @@
-﻿using JDTemplate.Domain2.Entities;
+﻿using JDTemplate.Domain.Entities;
 
 namespace JDTemplate.Domain.Interfaces;
 public interface IWeatherForecastService

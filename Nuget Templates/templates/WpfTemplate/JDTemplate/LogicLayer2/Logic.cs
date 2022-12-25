@@ -1,6 +1,5 @@
 ﻿using JDTemplate.Domain.Entities;
 using JDTemplate.Domain.Interfaces;
-using JDTemplate.Domain2.Entities;
 
 namespace JDTemplate.LogicLayer;
 public class Logic : ILogic
