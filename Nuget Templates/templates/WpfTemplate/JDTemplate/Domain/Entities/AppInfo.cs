@@ -3,5 +3,5 @@
 public readonly record struct AppInfo
 {
     public string Name { get; init; }
-    public string Author { get; init; }
+    public string CreationDate { get; init; }
 }

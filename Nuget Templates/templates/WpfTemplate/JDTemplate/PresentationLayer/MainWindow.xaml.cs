@@ -13,6 +13,6 @@ public partial class MainWindow : Window
     {
         _logic = logic;
         InitializeComponent();
-        nametextBlock.Text = $"Hello World from {_logic.Info.Name} by {_logic.Info.Author}";
+        nametextBlock.Text = $"Hello World from {_logic.Info.Name} created on {_logic.Info.CreationDate}";
     }
 }

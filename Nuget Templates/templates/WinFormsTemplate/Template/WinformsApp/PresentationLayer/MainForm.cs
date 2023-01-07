@@ -9,7 +9,7 @@ public partial class MainForm : Form
     {
         _logic = logic;
         InitializeComponent();
-        nameTextBox.Text = $"Hello World from {_logic.Info.Name} by {_logic.Info.Author}";
+        nameTextBox.Text = $"Hello World from {_logic.Info.Name} created on {_logic.Info.CreationDate}";
 
     }
 }

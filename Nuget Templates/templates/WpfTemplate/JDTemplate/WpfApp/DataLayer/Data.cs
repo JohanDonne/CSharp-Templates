@@ -5,5 +5,5 @@ namespace JDTemplate.DataLayer;
 
 public class Data : IData
 {
-    public AppInfo Info { get; } = new AppInfo { Name = "3 - Layer App (Project Folders)", Author = "SolutionAuthor" };
+    public AppInfo Info { get; } = new AppInfo { Name = "3 - Layer App (Project Folders)", CreationDate = "01/01/1901" };
 }

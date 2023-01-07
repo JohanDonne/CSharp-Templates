@@ -4,7 +4,7 @@ using JDTemplate.Domain.Entities;
 using JDTemplate.Domain.Interfaces;
 
 namespace JDTemplate.PresentationLayer.ViewModels;
-public partial class MainViewModel : ObservableObject
+public class MainViewModel : ObservableObject
 {
     private readonly ILogic _logic;
     private bool _awaitingForecast = false;
@@ -19,18 +19,16 @@ public partial class MainViewModel : ObservableObject
         }
     }
 
-    [ObservableProperty]
-    private string _title;
-
-    public string InfoText => $"Hello World from {_logic.Info.Name} by {_logic.Info.Author}";
+        public string InfoText => $"Hello World from {_logic.Info.Name} created on {_logic.Info.CreationDate}";
 
     public WeatherForecast[]? Forecast { get; private set; }
 
     public string Time => DateTime.Now.ToLongTimeString();
 
     public IAsyncRelayCommand UpdateForecastCommand { get; init; }
+    public string Title { get ; private set ; }
 
-#pragma warning disable CS8618 
+#pragma warning disable CS8618
     public MainViewModel()
     {
         // Dummy constructor for use as designinstance in XAML Designer
@@ -42,7 +40,7 @@ public partial class MainViewModel : ObservableObject
     public MainViewModel(ILogic logic)
     {
         _logic = logic;
-        _title = "MainView";
+        Title = "MainView";
         UpdateForecastCommand = new AsyncRelayCommand(GetForecastAsync, () => !_awaitingForecast);
         _ = GetForecastAsync();
         _ = TimeLoop();

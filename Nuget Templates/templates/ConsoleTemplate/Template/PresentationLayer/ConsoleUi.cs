@@ -13,6 +13,6 @@ public class ConsoleUi
 
     public void Run()
     {
-        Console.WriteLine($"Hello World from {_logic.Info.Name} by {_logic.Info.Author}");
+        Console.WriteLine($"Hello World from {_logic.Info.Name} created on {_logic.Info.CreationDate}");
     }
 }

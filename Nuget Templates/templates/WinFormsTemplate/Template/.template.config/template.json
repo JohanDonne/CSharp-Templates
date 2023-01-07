@@ -13,11 +13,6 @@
   "sourceName": "Template", 
   "preferNameDirectory": true,
   "symbols":{
-    "author": {
-      "type": "parameter",
-      "defaultValue": "Author",
-      "replaces":"SolutionAuthor"
-    },
     "Architecture":{
       "type":"parameter",
       "datatype": "choice",
