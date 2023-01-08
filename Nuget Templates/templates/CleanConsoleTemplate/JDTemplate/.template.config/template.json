@@ -1,18 +1,18 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Johan Donne",
-  "classifications": [ "Clean Architecture", "WPF", "JD" ],
-  "name": "WPF Clean Architecture JD",
-  "identity": "JohanDonne.WpfClean",
-  "description": "Solution Template for a WPF App using a simplified Clean Architecture",
-  "shortName": "WPFClean-JD", 
+  "classifications": [ "Clean Architecture", "Console", "JD" ],
+  "name": "Console Clean Architecture JD",
+  "identity": "JohanDonne.ConsoleClean",
+  "description": "Solution Template for a Console App using a simplified Clean Architecture",
+  "shortName": "ConsoleClean-JD", 
   "tags": {
     "language": "C#",
     "type": "solution"
   },
   "sourceName": "JDTemplate", 
   "preferNameDirectory": true,
-  "symbols":{
+  "symbols":{   
     "CreationTimeStamp":{
        "type": "generated",
        "generator": "now",
