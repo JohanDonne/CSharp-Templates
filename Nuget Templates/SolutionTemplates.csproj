@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageVersion>1.0</PackageVersion>
-    <PackageId>JohanDonne.SolutionTemplates</PackageId>
+    <PackageId>Ikdoeict.SolutionTemplates</PackageId>
     <Title>Solution Templates</Title>
     <Authors>Johan Donné</Authors>
     <Description>Solution Templates using common layered architectures</Description>
@@ -19,7 +19,7 @@
     <PackageOutputPath>./nupkg</PackageOutputPath>    
 
     <PackageTags>dotnet-new;Templates;3Layer</PackageTags>
-    <PackageCopyright>Johan Donne - 2023</PackageCopyright>
+    <PackageCopyright>Johan Donné - 2023</PackageCopyright>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/JohanDonne/CSharp-Templates</PackageProjectUrl>
   </PropertyGroup>

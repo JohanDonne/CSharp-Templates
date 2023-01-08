@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Johan Donne",
-  "classifications": [ "3Layer", "WPF", "JD" ],
+  "classifications": [ "3Layer Architecture", "WPF", "JD" ],
   "name": "WPF 3Layer JD",
   "identity": "JohanDonne.Wpf3Layer",
   "description": "Solution Template for a WPF App using 3 layer architecture",
@@ -13,11 +13,6 @@
   "sourceName": "JDTemplate", 
   "preferNameDirectory": true,
   "symbols":{
-    "author": {
-      "type": "parameter",
-      "defaultValue": "Author",
-      "replaces":"SolutionAuthor"
-    },
     "Architecture":{
       "type":"parameter",
       "datatype": "choice",

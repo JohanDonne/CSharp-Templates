@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Johan Donne",
-  "classifications": [ "3Layer", "Console", "JD" ],
+  "classifications": [ "3Layer Architecture", "Console", "JD" ],
   "name": "Console 3Layer JD",
   "identity": "JohanDonne.Console3Layer",
   "description": "Solution Template for a Console App using 3 layer architecture",
@@ -13,11 +13,6 @@
   "sourceName": "Template", 
   "preferNameDirectory": true,
   "symbols":{
-    "author": {
-      "type": "parameter",
-      "defaultValue": "Author",
-      "replaces":"SolutionAuthor"
-    },
     "Architecture":{
       "type":"parameter",
       "datatype": "choice",

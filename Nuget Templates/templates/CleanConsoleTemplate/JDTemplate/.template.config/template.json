@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Johan Donne",
+  "classifications": [ "Clean Architecture", "Console", "JD" ],
+  "name": "Console Clean Architecture JD",
+  "identity": "JohanDonne.ConsoleClean",
+  "description": "Solution Template for a Console App using a simplified Clean Architecture",
+  "shortName": "ConsoleClean-JD", 
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "JDTemplate", 
+  "preferNameDirectory": true,
+  "symbols":{   
+    "CreationTimeStamp":{
+       "type": "generated",
+       "generator": "now",
+       "parameters": {
+          "format": "g"
+       },
+       "replaces":"01/01/1901"
+    }
+  },
+  "sources": [
+    {
+      "include": [
+         "JDTemplate.sln",
+         "Domain/**",
+         "Core/**",
+         "Infrastructure/**",
+         "Presentation/**",
+         "AppRoot/**"
+         ]     
+    }
+  ],
+   "guids": [
+    "96A70948-6B0C-4F77-9572-7E3BEFEEAD1E",
+    "6E69B647-58D4-41C0-9440-26F66E179BB4",
+    "06930B6D-9395-49FC-AE2D-DD866807EB64",
+    "53F0BC57-E5C0-4C55-BEA4-4C30A8618244",
+    "1BDFF373-BED1-46C4-B973-9F0AABBF2FEA",
+    "2888F0AF-B174-4F4E-8015-6E981673DE9F"
+  ]
+}
